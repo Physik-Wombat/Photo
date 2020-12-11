@@ -13,11 +13,11 @@ ui <- navbarPage(
     sidebarPanel(
       sliderTextInput(
         inputId = "slider",
-        label = "Konzentration der Lösung in mol/l:",
+        label = "Konzentration der Lösung in mmol/l:",
         grid = TRUE,
         force_edges = TRUE,
         
-        choices = c("0.0625", "0.125", "0.25", "0.5", "1")
+        choices = c("10", "5", "2.5", "1.25", "0.625")
         
         
       ),
@@ -40,7 +40,7 @@ ui <- navbarPage(
     column(
       5,
       offset = 1,
-      mainPanel(conditionalPanel("input.slider=='0.0625'",
+      mainPanel(conditionalPanel("input.slider=='0.625'",
                                  
                                  ((
                                    img(
@@ -55,7 +55,7 @@ ui <- navbarPage(
       
       ,
       
-      mainPanel(conditionalPanel("input.slider=='0.125'",
+      mainPanel(conditionalPanel("input.slider=='1.25'",
                                  
                                  ((
                                    img(
@@ -68,7 +68,7 @@ ui <- navbarPage(
                                  ))))
       ,
       
-      mainPanel(conditionalPanel("input.slider=='0.25'",
+      mainPanel(conditionalPanel("input.slider=='2.5'",
                                  
                                  ((
                                    img(
@@ -81,7 +81,7 @@ ui <- navbarPage(
                                  ))))
       ,
       
-      mainPanel(conditionalPanel("input.slider=='0.5'",
+      mainPanel(conditionalPanel("input.slider=='5'",
                                  
                                  ((
                                    img(
@@ -94,7 +94,7 @@ ui <- navbarPage(
                                  ))))
       ,
       
-      mainPanel(conditionalPanel("input.slider=='1'",
+      mainPanel(conditionalPanel("input.slider=='10'",
                                  
                                  ((
                                    img(
@@ -128,7 +128,7 @@ ui <- navbarPage(
         force_edges = TRUE,
         
         choices = c("0",
-                    "12",
+                    "12,5",
                     "25",
                     "50",
                     "100",
