@@ -1,0 +1,263 @@
+library(shiny)
+library(shinyWidgets)
+
+ui <- navbarPage(
+  strong("Das Photometer"),
+  
+  
+  tabPanel(
+    strong("Versuch 1&2"),
+    titlePanel(h4("")),
+    
+    
+    sidebarPanel(
+      sliderTextInput(
+        inputId = "slider",
+        label = "Konzentration der LÃ¶sung:",
+        grid = TRUE,
+        force_edges = TRUE,
+        pre = "[mol/l]",
+        choices = c("0.0625", "0.125", "0.25", "0.5", "1")
+        
+        
+      ),
+      br(),
+      checkboxInput("check", "LÃ¶sung mit unbekannter Konzentration", value = FALSE),
+      
+      
+      conditionalPanel("input.check",
+                       ((
+                         img(
+                           src = "c_unbekannt.jpg",
+                           height = 430,
+                           width = 430,
+                           align = "center"
+                         )
+                       )))
+      
+    ),
+    
+    column(
+      5,
+      offset = 1,
+      mainPanel(conditionalPanel("input.slider=='0.0625'",
+                                 
+                                 ((
+                                   img(
+                                     src = "C1_16.png",
+                                     height = 413,
+                                     width = 623,
+                                     align = "center"
+                                     
+                                   )
+                                   
+                                 ))))
+      
+      ,
+      
+      mainPanel(conditionalPanel("input.slider=='0.125'",
+                                 
+                                 ((
+                                   img(
+                                     src = "C1_8.png",
+                                     height = 413,
+                                     width = 609,
+                                     align = "center"
+                                   )
+                                   
+                                 ))))
+      ,
+      
+      mainPanel(conditionalPanel("input.slider=='0.25'",
+                                 
+                                 ((
+                                   img(
+                                     src = "C1_4.png",
+                                     height = 413,
+                                     width = 624,
+                                     align = "center"
+                                   )
+                                   
+                                 ))))
+      ,
+      
+      mainPanel(conditionalPanel("input.slider=='0.5'",
+                                 
+                                 ((
+                                   img(
+                                     src = "C1_2.png",
+                                     height = 413,
+                                     width = 595,
+                                     align = "center"
+                                   )
+                                   
+                                 ))))
+      ,
+      
+      mainPanel(conditionalPanel("input.slider=='1'",
+                                 
+                                 ((
+                                   img(
+                                     src = "C1_1.png",
+                                     height = 413,
+                                     width = 592,
+                                     align = "center"
+                                   )
+                                   
+                                 ))))
+    )
+    
+    
+    
+  ),
+  
+  
+  
+  #
+  tabPanel(
+    strong("Versuch 3"),
+    titlePanel(h4("")),
+    
+    
+    sidebarPanel(
+      "",
+      sliderTextInput(
+        inputId = "dot",
+        label = "Belichtung des RÃ¶ntgenfilms:",
+        grid = TRUE,
+        force_edges = TRUE,
+        pre = "ms",
+        choices = c("0",
+                    "12",
+                    "25",
+                    "50",
+                    "100",
+                    "200",
+                    "400",
+                    "800",
+                    "1600")
+        
+        
+      )
+    ),
+    column(
+      5,
+      offset = 1,
+      mainPanel(conditionalPanel("input.dot=='0'",
+                                 
+                                 ((
+                                   img(
+                                     src = "0ms.png",
+                                     height = 549,
+                                     width = 468,
+                                     align = "center"
+                                   )
+                                   
+                                 )))),
+      
+      
+      mainPanel(conditionalPanel("input.dot=='12'",
+                                 
+                                 ((
+                                   img(
+                                     src = "12ms.png",
+                                     height = 531,
+                                     width = 475,
+                                     align = "center"
+                                   )
+                                   
+                                 )))),
+      
+      mainPanel(conditionalPanel("input.dot=='25'",
+                                 
+                                 ((
+                                   img(
+                                     src = "25ms.png",
+                                     height = 531,
+                                     width = 487,
+                                     align = "center"
+                                   )
+                                   
+                                 )))),
+      
+      mainPanel(conditionalPanel("input.dot=='50'",
+                                 
+                                 ((
+                                   img(
+                                     src = "50ms.png",
+                                     height = 531,
+                                     width = 487,
+                                     align = "center"
+                                   )
+                                   
+                                 )))),
+      
+      mainPanel(conditionalPanel("input.dot=='100'",
+                                 
+                                 ((
+                                   img(
+                                     src = "100ms.png",
+                                     height = 531,
+                                     width = 481,
+                                     align = "center"
+                                   )
+                                   
+                                 )))),
+      
+      mainPanel(conditionalPanel("input.dot=='200'",
+                                 
+                                 ((
+                                   img(
+                                     src = "200ms.png",
+                                     height = 532,
+                                     width = 478,
+                                     align = "center"
+                                   )
+                                   
+                                 )))),
+      
+      mainPanel(conditionalPanel("input.dot=='400'",
+                                 
+                                 ((
+                                   img(
+                                     src = "400ms.png",
+                                     height = 531,
+                                     width = 479,
+                                     align = "center"
+                                   )
+                                   
+                                 )))),
+      
+      mainPanel(conditionalPanel("input.dot=='800'",
+                                 
+                                 ((
+                                   img(
+                                     src = "800ms.png",
+                                     height = 531,
+                                     width = 481,
+                                     align = "center"
+                                   )
+                                   
+                                 )))),
+      
+      mainPanel(conditionalPanel("input.dot=='1600'",
+                                 
+                                 ((
+                                   img(
+                                     src = "1600ms.png",
+                                     height = 532,
+                                     width = 487,
+                                     align = "center"
+                                   )
+                                   
+                                 ))))
+      #
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  
+}
+
+shinyApp(ui = ui, server = server)
