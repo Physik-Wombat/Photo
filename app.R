@@ -6,23 +6,23 @@ ui <- navbarPage(
   
   
   tabPanel(
-    strong("Versuch 1&2"),
+    strong("Versuch 1 & 2"),
     titlePanel(h4("")),
     
     
     sidebarPanel(
       sliderTextInput(
         inputId = "slider",
-        label = "Konzentration der LÃ¶sung:",
+        label = "Konzentration der Lösung in mol/l:",
         grid = TRUE,
         force_edges = TRUE,
-        pre = "[mol/l]",
+        
         choices = c("0.0625", "0.125", "0.25", "0.5", "1")
         
         
       ),
       br(),
-      checkboxInput("check", "LÃ¶sung mit unbekannter Konzentration", value = FALSE),
+      checkboxInput("check", "Lösung mit unbekannter Konzentration", value = FALSE),
       
       
       conditionalPanel("input.check",
@@ -123,10 +123,10 @@ ui <- navbarPage(
       "",
       sliderTextInput(
         inputId = "dot",
-        label = "Belichtung des RÃ¶ntgenfilms:",
+        label = "Belichtung des Röntgenfilms in ms:",
         grid = TRUE,
         force_edges = TRUE,
-        pre = "ms",
+        
         choices = c("0",
                     "12",
                     "25",
