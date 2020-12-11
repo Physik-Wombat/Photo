@@ -1,5 +1,5 @@
 library(shiny)
-library(shinyWidgets)
+
 
 ui <- navbarPage(
   strong("Das Photometer"),
