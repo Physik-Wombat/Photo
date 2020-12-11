@@ -128,7 +128,7 @@ ui <- navbarPage(
         force_edges = TRUE,
         
         choices = c("0",
-                    "12,5",
+                    "12.5",
                     "25",
                     "50",
                     "100",
@@ -156,7 +156,7 @@ ui <- navbarPage(
                                  )))),
       
       
-      mainPanel(conditionalPanel("input.dot=='12'",
+      mainPanel(conditionalPanel("input.dot=='12.5'",
                                  
                                  ((
                                    img(
