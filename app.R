@@ -14,8 +14,6 @@ ui <- navbarPage(
       sliderTextInput(
         inputId = "slider",
         label = "Konzentration der Lösung in mmol/l:",
-        br(),
-        "(Bei der nur mit Wasser (c = 0) gefüllten Küvette beträgt die Spannung 20 mV)",
         grid = TRUE,
         force_edges = TRUE,
         
@@ -23,6 +21,7 @@ ui <- navbarPage(
         
         
       ),
+      "(Bei der nur mit Wasser (c = 0) gefüllten Küvette beträgt die Spannung 20 mV)",
       br(), 
       checkboxInput("check", "Lösung mit unbekannter Konzentration", value = FALSE),
       
