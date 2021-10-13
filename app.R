@@ -21,7 +21,7 @@ ui <- navbarPage(
         
         
       ),
-      "Bei der nur mit Wasser (c = 0) gefüllten Küvette beträgt die Spannung 20 mV. Die Schichtdicke x beträgt 20 mm",
+      "Bei der nur mit Wasser (c = 0) gefüllten Küvette beträgt die Spannung 35 mV. Die Schichtdicke x beträgt 20 mm",
       br(), 
       checkboxInput("check", "Lösung mit unbekannter Konzentration", value = FALSE),
       
