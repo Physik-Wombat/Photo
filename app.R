@@ -99,7 +99,7 @@ ui <- navbarPage(
                                  
                                  ((
                                    img(
-                                     src = "C1_1.png",
+                                     src = "C10.png",
                                      height = 413,
                                      width = 592,
                                      align = "center"
